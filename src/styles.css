@@ -42,3 +42,10 @@ button:hover {
   border-color: #bd56f1;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
+
+.click-counter {
+  font-size: 2rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  margin-top: 10px;
+}

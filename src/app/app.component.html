@@ -1,6 +1,6 @@
 <img src="rxjs-logo.png" alt="The RxJS logo" />
-<h1>Understanding RxJS & Observables</h1>
-<p>Working with "Streams of Data".</p>
+<h1>Can You Catch the Fastest Clicker?</h1>
+<p>The counter's climbing every 200ms, can you keep up?</p>
 
 <p>
   <button (click)="onClick()">Click</button>
@@ -8,4 +8,8 @@
 
 <p [style.opacity]="fade ? 1 : 0.3" [style.transform]="fade ? 'scale(1)' : 'scale(0.95)'" class="click-counter">
   {{ clickCounter() }}
+</p>
+
+<p [style.opacity]="fade ? 1 : 0.3" [style.transform]="fade ? 'scale(1)' : 'scale(0.95)'" class="click-counter">
+  {{ intervalSignal() }}
 </p>

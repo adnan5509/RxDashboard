@@ -1,6 +1,6 @@
 import { Component, DestroyRef, effect, inject, OnInit, signal } from '@angular/core';
-import { toObservable } from '@angular/core/rxjs-interop';
-import { filter, interval, map } from 'rxjs';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+import { filter, interval, map, max, takeWhile } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,8 @@ export class AppComponent implements OnInit {
 
   clickCounter = signal(0);
   clickCounter$ = toObservable(this.clickCounter);
+  $interval = interval(150).pipe(takeWhile((val) => { return val <= 100 }));
+  intervalSignal = toSignal(this.$interval, { initialValue: 0 });
   fade = true;
 
   constructor() {
